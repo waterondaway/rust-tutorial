@@ -117,7 +117,7 @@ fn main() {
         bool2 = true;
     } else {
         bool1 = true;
-    };
+    }
     /*
         if else with expression
     */
@@ -188,9 +188,137 @@ fn main() {
         Loop 
     */
 
+    // Unlimited Loop 
     loop {
         println!("This will repeat forever!");
+        break;
     }
+
+    /*
+        Loop Count
+    */
+
+    let mut count_loop = 0;
+    loop {
+        println!("Count: {}", count_loop);
+
+        if count_loop == 3 {
+            break;
+        }
+        count_loop += 1; 
+    }
+
+    /*
+        Loop with return a value
+    */
+    let mut count = 0;
+    let _result = loop {
+        println!("Hello");
+        if count == 3 {
+            break count;
+        }
+        count += 1;
+    };
+
+    // Tip !
+    // Expression requires ; after end of expression
+    // Statement didn't require ; after end of statement
+
+
+    let mut count = 1;
+    while count <= 5 {
+        count += 1;
+        println!("{}", count);
+    }
+
+    // Rust For Loop
+    // not include the last number
+    for i in 1..6 {
+        println!("i is: {}", i);
+    }
+
+    // include the last number (Inclusive Range)
+    for i in 1..=6 {
+        println!("i is: {}", i);
+    }
+
+
+    // Creating a Function
+
+    /*
+    fn function_name() {
+        // code to be executed; 
+    }
+    */
+    
+    // Function with not return values
+
+    fn say_hello() {
+        println!("Hello from a function!");
+    }
+    
+    say_hello();
+
+    fn greet(name: &str) {
+        println!("Hello, {}!", name);
+    }
+    greet("Nonpawit Silabumrungrad");
+
+
+    // Function with return values
+
+    fn abc(a: i32, b: i32) -> i32 {
+        return a + b;
+    }
+    println!("{}", abc(3, 4));
+
+    // function omit the return values; 
+    fn _xyz(a: i32, b: i32) -> i32 {
+        a - b
+    }
+
+    // String in Rust
+    let _text1 = "Hello World".to_string();
+    let mut text2 = String::from("Hello");
+    text2.push_str(" World");
+    println!("{}", text2);
+
+    // Concatenate Strings
+    let s1 = String::from("Nonpawit");
+    let s2 = String::from("Silabumrungrad");
+
+    let result = format!("{} {}", s1, s2);
+    println!("{}", result);
+
+    // String Length
+    let name = String::from("John");
+    println!("Length: {}", name.len());
+
+    // But simple types like numbers, characters and booleans are copied, not moved.
+    
+    // Ownership (Only String Character & Boolean can do this way)
+    let a = 5;
+    let b = a;
+    println!("{} {}", a,b);
+
+    // Keep a to be Owner ship
+    let _a = String::from("Hello");
+    let _b = a.clone();
+    println!("{}", _a);
+
+
+    // Borrowing
+    let a = String::from("Hello");
+    let b = &a;
+
+    println!("a = {}", a);
+    println!("b = {}", b);
+
+    // Borrowing & want to change values
+
+    let mut name = String::from("John");
+    let name_ref = &mut name;
+    name_ref.push_str(" Smith");
 
 }
 
