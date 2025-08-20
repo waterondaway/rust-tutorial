@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn main() {
     // 'println!' is calling macro. similar like a function
     println!("Hello, world!");
@@ -315,11 +317,51 @@ fn main() {
     println!("b = {}", b);
 
     // Borrowing & want to change values
-
     let mut name = String::from("John");
     let name_ref = &mut name;
     name_ref.push_str(" Smith");
     
+    // Data Structures .
+
+    // Array
+    // Cannot grow or shink an array after it's created .
+    let mut fruits = ["apple", "banana", "orange"];
+    println!("Last fruit: {}", fruits[2]);
+    fruits[0] = "juice";
+
+    // Vectors (resizable array) .
+    let mut fruits2 = vec!["apple", "banana"];
+    fruits2.push("cherry");
+    println!("Last fruit: {}", fruits2[2]);
+    println!("Array Length: {}", fruits2.len());
+    println!("Print the Entire Array: {:?}", fruits2);
+    fruits2.remove(1);
+
+    // Tuples 
+    let person_tuples = ("Nonpawit", 10, true);
+    println!("Name: {}", person_tuples.0);
+
+    // HashMaps like Dictionary
+    let mut capital_cities = HashMap::new();
+    capital_cities.insert("France", "Paris");
+    capital_cities.insert("Nonpawit", "Silabumrungrad");
+    println!("Capital of France is {}", capital_cities["France"]);
+
+    // Struct 
+    struct Person {
+        name: String,
+        age: u32,
+        can_vote: bool
+    }
+
+    let nonpawit_person = Person {
+        name: String::from("John"),
+        age: 35,
+        can_vote: true
+    };
+    
+    println!("Name: {}", nonpawit_person.name);
+
 
 }
 

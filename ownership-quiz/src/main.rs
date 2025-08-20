@@ -6,8 +6,8 @@ fn main() {
     */
     println!("Question #1");
     let name = String::from("Nonpawit");
-    fn take_ownership(name: String) {
-        println!("Function Scope Value: {}", name);
+    fn take_ownership(s: String) {
+        println!("Function Scope Value: {}", s);
     }
     take_ownership(name.clone());
     println!("Global Scope Value : {}", name);
@@ -34,8 +34,4 @@ fn main() {
     let mut text = String::from("Hello");
     add_suffix(&mut text);
     println!("{}", text);
-
-
-    
-
 }
