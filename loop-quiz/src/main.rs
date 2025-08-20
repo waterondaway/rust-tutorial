@@ -24,7 +24,7 @@ fn main() {
         }
     }
     println!("Question #2");
-    println!("Answer of Question #2 'Factorial Number' : {}\n\n", answer);
+    println!("Answer of Question #2 'Factorial Number' : {}\n", answer);
 
     // Question #3 | Count Down Boom! .
     println!("Question #3");
@@ -36,6 +36,31 @@ fn main() {
             println!("Boom!");
             break;
         }
+    }
+    println!("\n");
+
+    // Question #4 | Print 1-10 with for loop .
+    println!("Question #4");
+    for i in 1..=10 {
+        println!("{}", i);
+    }
+    println!("\n");
+
+    // Question #5 | Summary of even number between 1 - 20 .
+    println!("Question #5");
+    let mut sum2:i32 = 0;
+    for i in 1..=20 {
+        if i%2 == 0 {
+            sum2 = sum2 + i;
+        }
+    }
+    println!("Answer of Question #5 'Summary of even number between 1 - 20' : {}\n", sum2);
+
+    // Question #6 | Multiplication Table . 
+    println!("Question #6");
+    let number2: i32 = 5;
+    for i in 1..=12 {
+        println!("{} x {} : {}", number2, i, (number2*i));
     }
 
 }
